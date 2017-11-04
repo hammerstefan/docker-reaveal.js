@@ -2,8 +2,9 @@ version: '3'
 services:
     revealjs:
         build: .
-        command: npm start -- --root=/var/local/reveal.js
+        command: npm start
         ports: 
             - "8000:8000"
         volumes:
-            - ${HTML_ROOT}:/var/local/reveal.js
+            - ${HTML_ROOT}/index.html:/usr/share/reveal.js/index.html
+            - ${HTML_ROOT}/markdown:/usr/share/reveal.js/markdown
