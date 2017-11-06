@@ -10,4 +10,7 @@ RUN apt install -y nodejs
 RUN git clone https://github.com/hakimel/reveal.js.git /usr/share/reveal.js
 WORKDIR /usr/share/reveal.js
 RUN npm install
+RUN npm install http-server-with-auth -g
 
+# custom reveal.js files
+COPY reveal.js/ ./

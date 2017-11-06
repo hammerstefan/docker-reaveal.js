@@ -1,0 +1,8 @@
+.reveal sub {
+	vertical-align: sub;
+	font-size: 0.6em;
+}
+.reveal sup {
+	vertical-align: super;
+	font-size: 0.6em;
+}
