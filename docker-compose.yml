@@ -11,7 +11,7 @@ services:
             - "8000:8000"
         volumes:
             - ${HTML_ROOT}/index.html:/usr/share/reveal.js/index.html
-            - ${HTML_ROOT}/markdown:/usr/share/reveal.js/markdown
+            - ${HTML_ROOT}/data:/usr/share/reveal.js/data
         depends_on: 
             - multiplex-server
 
@@ -20,9 +20,6 @@ services:
         command: node plugin/multiplex
         ports:
             - "1948:1948"
-        volumes:
-            - ${HTML_ROOT}/index.html:/usr/share/reveal.js/index.html
-            - ${HTML_ROOT}/markdown:/usr/share/reveal.js/markdown
 
     client:
         build: .
@@ -31,6 +28,6 @@ services:
             - "8001:8000"
         volumes:
             - ${HTML_ROOT}/index_client.html:/usr/share/reveal.js/index.html
-            - ${HTML_ROOT}/markdown:/usr/share/reveal.js/markdown
+            - ${HTML_ROOT}/data:/usr/share/reveal.js/data
         depends_on: 
             - multiplex-server
